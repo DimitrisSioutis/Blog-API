@@ -4,10 +4,7 @@ const Article = connection.models.Article
 const Player = connection.models.Player
 const User = connection.models.User
 
-router.get('/',async (req,res)=>{
-    const articles = await Article.find().sort({ createdAt: 'desc' })
-    res.json(articles)
-})
+
 router.get('/articles',async (req,res)=>{
     const articles = await Article.find().sort({ createdAt: 'desc' })
     res.json(articles)
