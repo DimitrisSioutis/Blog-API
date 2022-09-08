@@ -80,7 +80,7 @@ router.delete('/players/delete/:_id',async (req, res) => {
 
 router.get('/login',(req, res) => {
     if(req.session.isAuth==true){
-        res.send(true)
+        res.json(true)
     }
 })
 
