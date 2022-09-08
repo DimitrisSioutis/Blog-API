@@ -12,7 +12,7 @@ connection.on('open',()=>{
 })
 
 const app = express();
-const port = 8080;
+
 
 app.use(cors({
     origin: ["http://localhost:3000"],
@@ -25,7 +25,7 @@ app.use(session({
     secret: 'secret',
     resave: false,                                                          // don't save session if unmodified
     saveUninitialized: false,
-    store: MongoStore.create({mongoUrl:'mongodb://localhost/blog'})                                      // don't create session until something stored
+    store: MongoStore.create({mongoUrl:'mongodb+srv://sioutis:dimitris123@cluster0.gn78i2u.mongodb.net/blog?retryWrites=true&w=majority'})                                      // don't create session until something stored
 }))
 
 app.use(cookieParser())
