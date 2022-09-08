@@ -79,10 +79,7 @@ router.delete('/players/delete/:_id',async (req, res) => {
 })
 
 router.get('/login',(req, res) => {
-    if(req.session.isAuth==true){
-        res.json(true)
-    }
-    res.json(false)
+    res.json(req.session.isAuth)
 })
 
 router.post('/login', async (req, res) => {
