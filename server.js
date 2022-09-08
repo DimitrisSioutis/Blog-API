@@ -1,12 +1,11 @@
 const express = require("express");
-const session = require('express-session');
 const connection = require('./database')
 const router = require('./router');
 const parser = require('body-parser')
 const cors = require('cors');
 const methodOverride = require('method-override')  //enables us to use .delete
 const cookieParser = require('cookie-parser')
-const MongoStore = require('connect-mongo');
+
 connection.on('open',()=>{
     console.log('Database Connected')
 })
