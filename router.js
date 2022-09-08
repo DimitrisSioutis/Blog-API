@@ -6,8 +6,7 @@ const Article = connection.models.Article
 const Player = connection.models.Player
 const User = connection.models.User
 
-router.use(session({        
-    key: 'userId',                                                 // http://expressjs.com/en/resources/middleware/session.html
+router.use(session({                                                        // http://expressjs.com/en/resources/middleware/session.html
     secret: 'secret',
     resave: false,                                                          // don't save session if unmodified
     saveUninitialized: false,
@@ -88,10 +87,9 @@ router.delete('/players/delete/:_id',async (req, res) => {
 })
 
 router.get('/login',(req, res) => {
-    if(req.session.isAuth==true){
+    if(req.session.isAuth){
         res.send(true)
     }
-    res.send(false)
 })
 
 router.post('/login', async (req, res) => {
