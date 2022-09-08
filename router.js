@@ -4,6 +4,13 @@ const Article = connection.models.Article
 const Player = connection.models.Player
 const User = connection.models.User
 
+router.use(session({        
+    key: 'userId',                                                 // http://expressjs.com/en/resources/middleware/session.html
+    secret: 'secret',
+    resave: false,                                                          // don't save session if unmodified
+    saveUninitialized: false,
+    store: MongoStore.create({mongoUrl:'mongodb+srv://sioutis:dimitris123@cluster0.gn78i2u.mongodb.net/blog?retryWrites=true&w=majority'})                                      // don't create session until something stored
+}))
 
 router.get('/articles',async (req,res)=>{
     const articles = await Article.find().sort({ createdAt: 'desc' })

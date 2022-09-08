@@ -20,13 +20,7 @@ app.use(cors({
     credentials: true
 }))
 
-app.use(session({        
-    key: 'userId',                                                 // http://expressjs.com/en/resources/middleware/session.html
-    secret: 'secret',
-    resave: false,                                                          // don't save session if unmodified
-    saveUninitialized: false,
-    store: MongoStore.create({mongoUrl:'mongodb+srv://sioutis:dimitris123@cluster0.gn78i2u.mongodb.net/blog?retryWrites=true&w=majority'})                                      // don't create session until something stored
-}))
+
 
 app.use(cookieParser())
 app.use(parser.json());
