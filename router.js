@@ -82,6 +82,7 @@ router.get('/login',(req, res) => {
     if(req.session.isAuth==true){
         res.json(true)
     }
+    res.json(false)
 })
 
 router.post('/login', async (req, res) => {
