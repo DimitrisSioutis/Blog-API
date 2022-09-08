@@ -37,6 +37,4 @@ app.use(methodOverride('_method'))
 
 app.use('/api',router)
 
-app.listen( port, () => {
-    console.log(`server running on port: ${port}`);
-})
+app.listen( process.env.PORT || 8080)
