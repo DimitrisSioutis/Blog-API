@@ -38,10 +38,6 @@ const ArticleSchema = new mongoose.Schema({
         required: true,
         unique: true //slug is used as the link to the article so we need to make sure every slug its unique
     },
-    sanitizedHtml: {
-        type: String,
-        required: true
-    },
     image: {
         type: String
     }
